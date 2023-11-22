@@ -1,8 +1,7 @@
 // Copyright On Giant's Shoulders
-
-
 #include "Player/AuraPlayerController.h"
-#include "AuraPlayerController.h"
+#include "EnhancedInputSubsystems.h"
+
 
 AAuraPlayerController::AAuraPlayerController()
 {
@@ -11,8 +10,8 @@ AAuraPlayerController::AAuraPlayerController()
 
 void AAuraPlayerController::BeginPlay()
 {
-    super::BeginPlay();
+    Super::BeginPlay(); // Corrected 'Super' usage
     check(AuraContext);
 
-    UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer())
+    UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 }
